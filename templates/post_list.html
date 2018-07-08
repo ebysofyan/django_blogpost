@@ -1,0 +1,13 @@
+{% extends "index.html" %} {% block content %} {% for post in posts %}
+<div class="card" style="width: 100%; margin-top: 8px;">
+    <div class="card-body">
+        <h4 class="card-title">{{post.title}}</h4>
+        <p class="card-text">{{post.content|truncatechars:100|safe}}</p>
+        <a href="{% url 'detail' post.slug %}" class="card-link" style="float: right">Lanjutkan Membaca . . .</a>
+    </div>
+</div>
+{% empty %}
+<div class="alert alert-info" style="margin-top: 8px;" role="alert">
+    Tidak ada postingan!
+</div>
+{% endfor %} {% endblock content %}
