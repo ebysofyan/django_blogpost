@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^$', views.PostsListView.as_view(), name='list'),
-    url(r'^(?P<slug>[\w\-]+)$',
+    url(r'^post/(?P<slug>[\w\-]+)$',
         views.PostsDetailView.as_view(), name='detail'),
 ]
